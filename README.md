@@ -1,6 +1,6 @@
 ## Hurricane Data Analysis
 
-This project involves analyzing hurricane data to derive meaningful insights. The data includes information on hurricanes' names, occurrence months and years, maximum sustained winds, affected areas, recorded damages, and fatalities. The analysis includes several key functions:
+This Codecademy project involves analyzing hurricane data to derive meaningful insights. The data includes information on hurricanes' names, occurrence months and years, maximum sustained winds, affected areas, recorded damages, and fatalities. The analysis includes several key functions:
 
 1. **Updating Recorded Damages:**
    - A function converts damage values from string format (e.g., `100M`, `1.54B`) into numerical values. This standardization allows for consistent data handling and analysis.
