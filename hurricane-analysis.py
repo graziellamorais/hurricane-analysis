@@ -62,10 +62,10 @@ def create_hurricane_dict(names, months, years, max_sustained_winds, areas_affec
         hurricane_dict[names[i]] = hurricane_info
     return hurricane_dict
 
-# Test the function with example data
+# Testing the function with example data
 hurricane_data = create_hurricane_dict(names, months, years, max_sustained_winds, areas_affected, deaths)
 
-# Print the result
+# Printing the result
 for name, info in hurricane_data.items():
     print(f"{name}: {info}")
         
@@ -78,22 +78,22 @@ def organize_hurricanes_by_year(hurricane_dict):
     hurricanes_by_year = {}
 
     for hurricane_name, info in hurricane_dict.items():
-        # Extract the year
+        # Extracting the year
         year = info['Year']
         # Organizing by year
         if year not in hurricanes_by_year:
             # If the year is not already in the new dictionary, initialize a new empty list
             hurricanes_by_year[year] = []
         
-        # Append the hurricane's info to the list for the given year
+        # Appending the hurricane's info to the list for the given year
         hurricanes_by_year[year].append(info)
         
     return hurricanes_by_year
 
-# Test the function with your hurricane data
+# Testing
 hurricanes_by_year = organize_hurricanes_by_year(hurricane_data)
 
-# Print the hurricanes organized by year to verify
+# Printing the hurricanes organized by year to verify
 for year, hurricanes in hurricanes_by_year.items():
     print(f"Year {year}:")
     for hurricane in hurricanes:
@@ -110,10 +110,10 @@ def count_affected_areas(area_list):
     for group in area_list:
         # Looping through the list inside the main list
         for area in group:
-            # Add 1 if area is already in the list
+            # Adding 1 if the area is already on the list
             if area in affected_areas_dict:
                 affected_areas_dict[area] += 1
-            # Add the area if it's not in the list
+            # Adding the area if it's not on the list
             else:
                 affected_areas_dict[area] = 1
     
@@ -129,7 +129,7 @@ print(affected_areas_count)
 
 # find most frequently affected area and the number of hurricanes involved in
 def find_most_affected_area(affected_areas_dict):
-    # Find the area with the maximum count
+    # Finding the area with the maximum count
     max_area = max(affected_areas_dict, key=affected_areas_dict.get)
     max_count = affected_areas_dict[max_area]
     return max_area, max_count
@@ -152,12 +152,11 @@ def find_deadliest_hurricane(hurricane_dict):
         # Accessing the number of deaths caused by the current hurricane
         deaths = hurricane_data['Deaths']
 
-        # Check if this hurricane caused more deaths than the current maximum
+        # Checking if this hurricane caused more deaths than the current maximum
         if deaths > max_deaths:
             max_deaths = deaths
             deadliest_hurricane = hurricane_name
     
-    # Return the name of the deadliest hurricane and the number of deaths
     return deadliest_hurricane, max_deaths
 
 # Testing
@@ -180,13 +179,13 @@ def rate_hurricanes_by_mortality(hurricane_dict):
     
     # Looping through each hurricane in the dictionary
     for hurricane_name, hurricane_data in hurricane_dict.items():
-        # Access the number of deaths
+        # Accessing the number of deaths
         deaths = hurricane_data['Deaths']
 
         # Determining the mortality rating for this hurricane
         for rating, upper_bound in sorted(mortality_scale.items()):
             if deaths > upper_bound:
-                # Assign the hurricane to the corresponding mortality rating
+                # Assigning the hurricane to the corresponding mortality rating
                 current_rating = rating
 
             else:
@@ -207,7 +206,6 @@ for rating, hurricanes in rated_hurricanes.items():
 
 # 8 Calculating Hurricane Maximum Damage
 
-
 # Adding 'Damages' key to each hurricane entry
 def add_damage_info(hurricane_dict, damages_list):
     for i, (hurricane_name, hurricane_info) in enumerate(hurricane_dict.items()):
@@ -218,10 +216,10 @@ def add_damage_info(hurricane_dict, damages_list):
     
     return hurricane_dict
 
-# Update the hurricane_data dictionary with the 'Damages' information
+# Updating the hurricane_data dictionary with the 'Damages' information
 hurricane_data_with_damages = add_damage_info(hurricane_data, damages)
 
-# Print the updated data to verify
+# Printing the updated data to verify
 for name, info in hurricane_data_with_damages.items():
     print(f"{name}: {info}")
 
